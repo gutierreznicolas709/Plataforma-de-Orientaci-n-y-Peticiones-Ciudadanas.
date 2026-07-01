@@ -1,0 +1,29 @@
+{
+  "name": "plataforma-de-orientaci-n-y-peticiones-ciudadanas.",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+  "start": "node server.js",
+  "dev": "node server.js"
+},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gutierreznicolas709/Plataforma-de-Orientaci-n-y-Peticiones-Ciudadanas..git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/gutierreznicolas709/Plataforma-de-Orientaci-n-y-Peticiones-Ciudadanas./issues"
+  },
+  "homepage": "https://github.com/gutierreznicolas709/Plataforma-de-Orientaci-n-y-Peticiones-Ciudadanas.#readme",
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1"
+  }
+}
