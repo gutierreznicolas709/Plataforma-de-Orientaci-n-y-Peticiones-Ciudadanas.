@@ -1,5 +1,6 @@
 require("dotenv").config();
 
+const peticionesRoutes = require("./src/routes/peticiones.routes");
 const express = require("express");
 const path = require("path");
 
@@ -13,6 +14,8 @@ const APP_ENV = process.env.APP_ENV || "development";
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
+
+app.use("/api/peticiones", peticionesRoutes);
 
 app.get("/", (req, res) => {
   res.send(`
@@ -39,6 +42,7 @@ app.get("/estado", (req, res) => {
 });
 
 app.use((req, res) => {
+
   res.status(404).json({
     error: "Ruta no encontrada",
     mensaje: "La ruta solicitada aún no existe o no ha sido creada."

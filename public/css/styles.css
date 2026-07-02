@@ -40,3 +40,28 @@ pre {
   padding: 16px;
   white-space: pre-wrap;
 }
+
+.aviso {
+  padding: 12px;
+  background: #fff4d6;
+  border-left: 4px solid #c58b00;
+}
+
+.checkbox {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-weight: normal;
+}
+
+.checkbox input {
+  width: auto;
+}
+
+#resultadoBackend {
+  padding: 12px;
+  background: #eef7ff;
+  border: 1px solid #b6dcff;
+  border-radius: 6px;
+  margin-top: 10px;
+}
