@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Generador de Derecho de Petición</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <main>
+    <h1>Generador de Derecho de Petición</h1>
+
+    <p>
+      Este formulario generará un borrador editable de apoyo pedagógico.
+      Debe ser revisado antes de presentarse ante cualquier autoridad.
+    </p>
+
+    <p>
+      En clase use datos simulados. No incluya documentos reales, datos sensibles ni acusaciones sin soporte.
+    </p>
+
+    <section>
+      <h2>Datos básicos</h2>
+
+      <form id="formPeticion">
+        <label for="ciudad">Ciudad</label>
+        <input id="ciudad" name="ciudad" type="text" placeholder="Ejemplo: Bogotá D.C." required />
+
+        <label for="entidad">Entidad destinataria</label>
+        <input id="entidad" name="entidad" type="text" placeholder="Ejemplo: Secretaría de..." required />
+
+        <label for="nombre">Nombre del solicitante</label>
+        <input id="nombre" name="nombre" type="text" placeholder="Usar datos de práctica en clase" required />
+
+        <label for="tipoDocumento">Tipo de documento</label>
+        <select id="tipoDocumento" name="tipoDocumento" required>
+          <option value="">Seleccione</option>
+          <option value="CC">Cédula de ciudadanía</option>
+          <option value="TI">Tarjeta de identidad</option>
+          <option value="CE">Cédula de extranjería</option>
+          <option value="PAS">Pasaporte</option>
+          <option value="PRACTICA">Documento de práctica</option>
+        </select>
+
+        <label for="documento">Número de documento</label>
+        <input id="documento" name="documento" type="text" placeholder="En clase usar 0000000000" required />
+
+        <label for="correo">Correo para notificación</label>
+        <input id="correo" name="correo" type="email" placeholder="correo_prueba@example.com" required />
+
+        <label for="tipoPeticion">Tipo de petición</label>
+        <select id="tipoPeticion" name="tipoPeticion" required>
+          <option value="">Seleccione</option>
+          <option value="informacion_publica">Solicitud de información pública</option>
+          <option value="copias">Solicitud de copias</option>
+          <option value="estado_tramite">Solicitud de estado de trámite</option>
+          <option value="orientacion_ruta">Orientación sobre ruta institucional</option>
+        </select>
+
+        <label for="asunto">Asunto</label>
+        <input id="asunto" name="asunto" type="text" placeholder="Ejemplo: Solicitud de información pública" required />
+
+        <label for="hechos">Hechos o contexto</label>
+        <textarea id="hechos" name="hechos" rows="6" placeholder="Describa el contexto de forma clara y respetuosa" required></textarea>
+
+        <label for="solicitud">Solicitud concreta</label>
+        <textarea id="solicitud" name="solicitud" rows="6" placeholder="Indique qué información o documento solicita" required></textarea>
+
+        <label for="anexos">Anexos</label>
+        <textarea id="anexos" name="anexos" rows="3" placeholder="Indique si existen anexos. En clase no use documentos reales."></textarea>
+
+        <label>
+          <input type="checkbox" id="aceptaRevision" required />
+          Entiendo que este sistema genera un borrador que debe ser revisado antes de radicarse.
+        </label>
+
+        <button type="submit">Generar borrador</button>
+      </form>
+    </section>
+
+    <section>
+      <h2>Vista previa</h2>
+      <pre id="vistaPrevia">La vista previa se generará en la siguiente clase.</pre>
+    </section>
+  </main>
+</body>
+</html>
