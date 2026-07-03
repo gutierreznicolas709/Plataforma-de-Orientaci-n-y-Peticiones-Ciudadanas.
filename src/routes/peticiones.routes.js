@@ -59,7 +59,9 @@ router.post("/generar", async (req, res) => {
 
     return res.status(500).json({
       ok: false,
-      mensaje: "No fue posible generar la petición en este momento."
+      mensaje: error.message.includes("Error al conectar con n8n")
+        ? error.message
+        : "No fue posible generar la petición en este momento."
     });
   }
 });

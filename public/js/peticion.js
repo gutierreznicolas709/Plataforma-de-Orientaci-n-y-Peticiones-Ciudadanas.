@@ -133,18 +133,27 @@ async function enviarAlBackend(event) {
       body: JSON.stringify(datos)
     });
 
-    const data = await response.json();
+    let data = null;
+
+    try {
+      const texto = await response.text();
+      data = texto ? JSON.parse(texto) : null;
+    } catch (error) {
+      data = null;
+    }
 
     if (!response.ok) {
-      resultado.textContent = data.mensaje || "Ocurrió un error al generar la petición.";
+      resultado.textContent = data?.mensaje || data?.error || "Ocurrió un error al generar la petición.";
       return;
     }
 
+    const mensaje = data?.mensaje || "Solicitud recibida correctamente.";
+
     resultado.innerHTML = `
-      <p><strong>Respuesta:</strong> ${data.mensaje}</p>
-      <p><strong>Modo:</strong> ${data.modo}</p>
+      <p><strong>Respuesta:</strong> ${mensaje}</p>
+      <p><strong>Modo:</strong> ${data?.modo || "n8n"}</p>
       ${
-        data.linkDocumento
+        data?.linkDocumento
           ? `<p><a href="${data.linkDocumento}" target="_blank">Abrir documento generado</a></p>`
           : "<p>Documento editable pendiente para la integración con n8n y Google Docs.</p>"
       }

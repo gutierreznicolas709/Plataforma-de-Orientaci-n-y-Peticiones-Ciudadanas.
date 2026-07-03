@@ -11,20 +11,46 @@ async function enviarPeticionAN8n(datos) {
     };
   }
 
-  const response = await fetch(webhookUrl, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      "x-shared-secret": sharedSecret || ""
-    },
-    body: JSON.stringify(datos)
-  });
-
-  if (!response.ok) {
-    throw new Error(`Error al conectar con n8n: ${response.status}`);
+  let response;
+  try {
+    response = await fetch(webhookUrl, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "x-shared-secret": sharedSecret || ""
+      },
+      body: JSON.stringify(datos)
+    });
+  } catch (error) {
+    throw new Error(`No fue posible contactar n8n: ${error.message}`);
   }
 
-  return response.json();
+  const texto = await response.text();
+  let respuestaJson = null;
+
+  if (texto) {
+    try {
+      respuestaJson = JSON.parse(texto);
+    } catch (error) {
+      respuestaJson = null;
+    }
+  }
+
+  if (!response.ok) {
+    const detalle = respuestaJson?.mensaje || respuestaJson?.error || texto || "Respuesta vacía del flujo";
+    throw new Error(`Error al conectar con n8n: ${response.status} - ${detalle}`);
+  }
+
+  if (!texto) {
+    return {
+      modo: "n8n",
+      mensaje: "n8n respondió sin cuerpo.",
+      linkDocumento: null,
+      estado: "respuesta_vacia"
+    };
+  }
+
+  return respuestaJson || { mensaje: texto };
 }
 
 module.exports = {
