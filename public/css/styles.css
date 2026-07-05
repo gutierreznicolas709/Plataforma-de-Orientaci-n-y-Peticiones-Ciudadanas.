@@ -65,3 +65,30 @@ pre {
   border-radius: 6px;
   margin-top: 10px;
 }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+  font-size: 14px;
+}
+
+th,
+td {
+  padding: 8px;
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  background: #f0f0f0;
+}
+
+.estado {
+  font-weight: bold;
+}
+
+.sin-documento {
+  color: #777;
+  font-style: italic;
+}

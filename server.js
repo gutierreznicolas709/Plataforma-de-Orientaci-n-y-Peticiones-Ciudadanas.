@@ -5,6 +5,7 @@ const express = require("express");
 const path = require("path");
 const authRoutes = require("./src/routes/auth.routes");
 const app = express();
+const dashboardRoutes = require("./src/routes/dashboard.routes");
 
 const PORT = process.env.PORT || 3000;
 const APP_NAME =
@@ -17,6 +18,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/api/peticiones", peticionesRoutes);
 app.use("/api/auth", authRoutes);
+app.use("/api/dashboard", dashboardRoutes);
 
 app.get("/", (req, res) => {
   res.send(`

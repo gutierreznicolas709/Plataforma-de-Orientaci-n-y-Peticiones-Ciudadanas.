@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard de Seguimiento</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <main>
+    <h1>Dashboard de Seguimiento</h1>
+
+    <p class="aviso">
+      Este dashboard muestra solicitudes de práctica. No use datos reales.
+    </p>
+
+    <section>
+      <h2>Usuario de práctica</h2>
+      <div id="usuarioActual">Verificando sesión...</div>
+    </section>
+
+    <section>
+      <h2>Solicitudes registradas</h2>
+      <div id="resumenDashboard">Cargando solicitudes...</div>
+
+      <table id="tablaPeticiones" border="1">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Fecha</th>
+            <th>Entidad</th>
+            <th>Asunto</th>
+            <th>Tipo</th>
+            <th>Estado</th>
+            <th>Documento</th>
+            <th>Observaciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td colspan="8">Cargando...</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Acciones</h2>
+      <p>
+        <a href="/peticion.html">Crear nueva petición</a>
+      </p>
+      <p>
+        <a href="/zona-protegida.html">Volver a zona protegida</a>
+      </p>
+      <button id="btnCerrarSesion">Cerrar sesión</button>
+    </section>
+  </main>
+
+  <script src="/js/dashboard.js"></script>
+</body>
+</html>
