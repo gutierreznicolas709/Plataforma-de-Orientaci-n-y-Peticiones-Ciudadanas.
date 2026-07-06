@@ -27,8 +27,9 @@ app.get("/", (req, res) => {
     <p>Estado: aplicación base activa</p>
     <ul>
       <li><a href="/estado">Ver estado</a></li>
-      <li><a href="/peticion.html">Formulario de petición - Próxima clase</a></li>
-    </ul>
+      <li><a href="/peticion.html">Formulario de petición </a></li>
+    <li><a href="/login.html">Formulario de inicio de sesión</a></li>
+      </ul>
   `);
 });
 
