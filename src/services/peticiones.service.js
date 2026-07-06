@@ -31,10 +31,55 @@ const solicitudesMock = [
   }
 ];
 
+const estadosPermitidos = [
+  "borrador_generado",
+  "pendiente_revision",
+  "requiere_ajuste",
+  "revisado",
+  "listo_para_envio",
+  "enviado",
+  "cerrado"
+];
+
 async function listarPeticiones() {
   return solicitudesMock;
 }
 
+async function cambiarEstadoPeticion(id, nuevoEstado, observaciones) {
+  const idNumerico = Number(id);
+
+  if (!estadosPermitidos.includes(nuevoEstado)) {
+    return {
+      ok: false,
+      codigo: 400,
+      mensaje: "Estado no permitido."
+    };
+  }
+
+  const peticion = solicitudesMock.find((item) => item.id === idNumerico);
+
+  if (!peticion) {
+    return {
+      ok: false,
+      codigo: 404,
+      mensaje: "Petición no encontrada."
+    };
+  }
+
+  peticion.estado = nuevoEstado;
+  peticion.observaciones = observaciones || peticion.observaciones;
+  peticion.fechaActualizacion = new Date().toISOString();
+
+  return {
+    ok: true,
+    codigo: 200,
+    mensaje: "Estado actualizado correctamente.",
+    peticion
+  };
+}
+
 module.exports = {
-  listarPeticiones
+  listarPeticiones,
+  cambiarEstadoPeticion,
+  estadosPermitidos
 };
