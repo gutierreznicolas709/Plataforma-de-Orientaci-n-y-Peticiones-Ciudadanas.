@@ -51,18 +51,30 @@
         <label for="correo">Correo para recibir respuesta</label>
         <input id="correo" name="correo" type="email" placeholder="correo_prueba@example.com" required />
 
-        <label for="tipoPeticion">Tipo de petición</label>
-        <select id="tipoPeticion" name="tipoPeticion" required>
-          <option value="">Seleccione</option>
-          <option value="informacion_publica">Solicitud de información pública</option>
-          <option value="copias">Solicitud de copias</option>
-          <option value="estado_tramite">Solicitud de estado de trámite</option>
-          <option value="orientacion_ruta">Orientación sobre ruta institucional</option>
-        </select>
+        <label for="tipoPeticion">Tipo de solicitud o ruta</label>
+<select id="tipoPeticion" name="tipoPeticion" required>
+  <option value="">Seleccione</option>
+  <option value="derecho_peticion">Derecho de petición general</option>
+  <option value="informacion_publica">Solicitud de información pública</option>
+  <option value="copias">Solicitud de copias</option>
+  <option value="estado_tramite">Solicitud de estado de trámite</option>
+  <option value="orientacion_ruta">Orientación sobre ruta institucional</option>
+  <option value="querella_policiva">Orientación para posible querella policiva</option>
+</select>
+
+<div id="ayudaTipoPeticion" class="aviso">
+  Seleccione un tipo de solicitud para ver una orientación inicial.
+</div>
 
         <label for="asunto">Asunto</label>
         <input id="asunto" name="asunto" type="text" placeholder="Ejemplo: Solicitud de información pública" required />
-
+<section class="aviso">
+  <h3>Recomendación</h3>
+  <p>
+    Escriba los hechos de forma clara, respetuosa y verificable.
+    No incluya acusaciones sin soporte ni datos sensibles innecesarios.
+  </p>
+</section>
         <label for="hechos">Hechos o contexto</label>
         <textarea id="hechos" name="hechos" rows="6" placeholder="Describa el contexto de forma clara y respetuosa" required></textarea>
 

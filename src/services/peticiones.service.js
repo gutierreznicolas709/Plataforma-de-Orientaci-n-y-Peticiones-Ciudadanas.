@@ -28,6 +28,16 @@ const solicitudesMock = [
     estado: "requiere_ajuste",
     linkDocumento: null,
     observaciones: "Falta especificar qué documentos se solicitan."
+  },
+  {
+    id: 4,
+    fecha: "2026-06-08",
+    entidad: "Personeria de ejemplo",
+    asunto: "Orientacion sobre ruta institucional",
+    tipoPeticion: "orientacion_ruta",
+    estado: "revisado",
+    linkDocumento: "https://docs.google.com/document/d/ejemplo-documento-editable",
+    observaciones: "Documento editable de practica para revisión. No contiene datos reales."
   }
 ];
 
