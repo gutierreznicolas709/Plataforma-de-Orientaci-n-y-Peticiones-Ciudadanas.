@@ -7,9 +7,9 @@
     "doc": "docs"
   },
   "scripts": {
-  "start": "node server.js",
-  "dev": "node server.js"
-},
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/gutierreznicolas709/Plataforma-de-Orientaci-n-y-Peticiones-Ciudadanas..git"
@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/gutierreznicolas709/Plataforma-de-Orientaci-n-y-Peticiones-Ciudadanas.#readme",
   "dependencies": {
+    "docx": "^9.7.1",
     "dotenv": "^17.4.2",
     "express": "^5.2.1"
   }

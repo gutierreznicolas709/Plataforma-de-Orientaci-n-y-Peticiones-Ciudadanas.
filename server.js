@@ -1,5 +1,7 @@
 require("dotenv").config();
 
+const documentosRoutes = require("./src/routes/documentos.routes");
+
 const peticionesRoutes = require("./src/routes/peticiones.routes");
 const express = require("express");
 const path = require("path");
@@ -19,7 +21,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/api/peticiones", peticionesRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/dashboard", dashboardRoutes);
-
+app.use("/api/documentos", documentosRoutes);
 app.get("/", (req, res) => {
   res.send(`
     <h1>${APP_NAME}</h1>

@@ -51,6 +51,43 @@ function opcionesEstado(estadoActual) {
     .join("");
 }
 
+async function descargarWord(id) {
+  const sesion = obtenerSesion();
+
+  if (!sesion) {
+    window.location.href = "/login.html";
+    return;
+  }
+
+  try {
+    const response = await fetch(`/api/documentos/peticiones/${id}/word`, {
+      headers: {
+        Authorization: `Bearer ${sesion.token}`
+      }
+    });
+
+    if (!response.ok) {
+      alert("No fue posible descargar el documento Word.");
+      return;
+    }
+
+    const blob = await response.blob();
+    const url = window.URL.createObjectURL(blob);
+
+    const enlace = document.createElement("a");
+    enlace.href = url;
+    enlace.download = `peticion-${id}.docx`;
+    document.body.appendChild(enlace);
+    enlace.click();
+    enlace.remove();
+
+    window.URL.revokeObjectURL(url);
+  } catch (error) {
+    alert("Error al descargar el documento Word.");
+    console.error(error);
+  }
+}
+
 function pintarPeticiones(peticiones) {
   const tbody = document.querySelector("#tablaPeticiones tbody");
 
@@ -61,10 +98,18 @@ function pintarPeticiones(peticiones) {
 
   tbody.innerHTML = peticiones
     .map((item) => {
-      const documento = item.linkDocumento
-        ? `<a href="${item.linkDocumento}" target="_blank">Abrir documento</a>`
-        : `<span class="sin-documento">Pendiente</span>`;
-
+     const documento = `
+     ${
+      item.linkDocumento
+        ? `<p><a href="${item.linkDocumento}" target="_blank">Abrir Google Docs</a></p>`
+        : `<p><span class="sin-documento">Google Docs pendiente</span></p>`
+     }
+  <p>
+    <button type="button" onclick="descargarWord(${item.id})">
+      Descargar Word
+    </button>
+  </p>
+`;
       return `
         <tr>
           <td>${item.id}</td>
