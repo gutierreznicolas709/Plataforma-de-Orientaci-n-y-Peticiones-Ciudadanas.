@@ -8,30 +8,30 @@
 </head>
 <body>
   <main>
-    <h1>Zona protegida de práctica</h1>
+    <header class="page-header">
+      <div>
+        <span class="badge">Acceso protegido</span>
+        <h1>Zona protegida de práctica</h1>
+        <p>Esta vista simula un espacio reservado para operaciones internas y seguimiento avanzado.</p>
+      </div>
+      <a class="header-link" href="/dashboard.html">Ver dashboard</a>
+    </header>
 
-    <p class="aviso">
-      Esta página simula una sección protegida. En la siguiente clase se usará para preparar el dashboard.
-    </p>
+    <div class="auth-grid">
+      <section class="panel">
+        <h2>Usuario actual</h2>
+        <div id="usuarioActual" class="result-box">Cargando usuario...</div>
+      </section>
 
-    <section>
-      <h2>Usuario actual</h2>
-      <div id="usuarioActual">Cargando usuario...</div>
-    </section>
-
-    <section>
-      <h2>Validación backend</h2>
-      <div id="validacionBackend">Pendiente de validación.</div>
-    </section>
-
-    <button id="btnCerrarSesion">Cerrar sesión</button>
-
-    <p>
-      <a href="/dashboard.html">Ver dashboard</a>
-    </p>
-    <p>
-      <a href="/login.html">Volver al login</a>
-    </p>
+      <section class="panel">
+        <h2>Validación backend</h2>
+        <div id="validacionBackend" class="result-box">Pendiente de validación.</div>
+        <button id="btnCerrarSesion">Cerrar sesión</button>
+        <p>
+          <a href="/login.html">Volver al login</a>
+        </p>
+      </section>
+    </div>
   </main>
 
   <script src="/js/zona-protegida.js"></script>

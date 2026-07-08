@@ -8,102 +8,111 @@
 </head>
 <body>
   <main>
-    <h1>Generador de Derecho de Petición</h1>
+    <header class="page-header">
+      <div>
+        <span class="badge">Formulario inteligente</span>
+        <h1>Generador de Derecho de Petición</h1>
+        <p>Completa el formulario para crear un borrador claro y listo para revisar.</p>
+      </div>
+      <a class="header-link" href="/dashboard.html">Ir al dashboard</a>
+    </header>
 
-    <p class="aviso">
-      Este sistema genera un borrador editable de apoyo pedagógico.
-      Debe ser revisado antes de presentarse ante cualquier autoridad.
-    </p>
+    <div class="auth-grid">
+      <section class="panel">
+        <h2>Formulario de solicitud</h2>
 
-    <p class="aviso">
-      En clase use datos simulados. No incluya documentos reales, datos sensibles ni acusaciones sin soporte.
-    </p>
+        <p class="aviso">
+          Este sistema genera un borrador editable de apoyo pedagógico.
+          Debe ser revisado antes de presentarse ante cualquier autoridad.
+        </p>
 
-    <section>
-      <h2>Formulario de solicitud</h2>
+        <p class="aviso">
+          En clase use datos simulados. No incluya documentos reales, datos sensibles ni acusaciones sin soporte.
+        </p>
 
-      <form id="formPeticion">
-        <label for="ciudad">Ciudad</label>
-        <input id="ciudad" name="ciudad" type="text" value="Bogotá D.C." required />
+        <form id="formPeticion">
+          <label for="ciudad">Ciudad</label>
+          <input id="ciudad" name="ciudad" type="text" value="Bogotá D.C." required />
 
-        <label for="fecha">Fecha</label>
-        <input id="fecha" name="fecha" type="date" required />
+          <label for="fecha">Fecha</label>
+          <input id="fecha" name="fecha" type="date" required />
 
-        <label for="entidad">Entidad destinataria</label>
-        <input id="entidad" name="entidad" type="text" placeholder="Ejemplo: Secretaría de..." required />
+          <label for="entidad">Entidad destinataria</label>
+          <input id="entidad" name="entidad" type="text" placeholder="Ejemplo: Secretaría de..." required />
 
-        <label for="nombre">Nombre del solicitante</label>
-        <input id="nombre" name="nombre" type="text" placeholder="Ejemplo: Ciudadano de práctica" required />
+          <label for="nombre">Nombre del solicitante</label>
+          <input id="nombre" name="nombre" type="text" placeholder="Ejemplo: Ciudadano de práctica" required />
 
-        <label for="tipoDocumento">Tipo de documento</label>
-        <select id="tipoDocumento" name="tipoDocumento" required>
-          <option value="">Seleccione</option>
-          <option value="CC">Cédula de ciudadanía</option>
-          <option value="TI">Tarjeta de identidad</option>
-          <option value="CE">Cédula de extranjería</option>
-          <option value="PAS">Pasaporte</option>
-          <option value="PRACTICA">Documento de práctica</option>
-        </select>
+          <label for="tipoDocumento">Tipo de documento</label>
+          <select id="tipoDocumento" name="tipoDocumento" required>
+            <option value="">Seleccione</option>
+            <option value="CC">Cédula de ciudadanía</option>
+            <option value="TI">Tarjeta de identidad</option>
+            <option value="CE">Cédula de extranjería</option>
+            <option value="PAS">Pasaporte</option>
+            <option value="PRACTICA">Documento de práctica</option>
+          </select>
 
-        <label for="documento">Número de documento</label>
-        <input id="documento" name="documento" type="text" placeholder="En clase usar 0000000000" required />
+          <label for="documento">Número de documento</label>
+          <input id="documento" name="documento" type="text" placeholder="En clase usar 0000000000" required />
 
-        <label for="correo">Correo para recibir respuesta</label>
-        <input id="correo" name="correo" type="email" placeholder="correo_prueba@example.com" required />
+          <label for="correo">Correo para recibir respuesta</label>
+          <input id="correo" name="correo" type="email" placeholder="correo_prueba@example.com" required />
 
-        <label for="tipoPeticion">Tipo de solicitud o ruta</label>
-<select id="tipoPeticion" name="tipoPeticion" required>
-  <option value="">Seleccione</option>
-  <option value="derecho_peticion">Derecho de petición general</option>
-  <option value="informacion_publica">Solicitud de información pública</option>
-  <option value="copias">Solicitud de copias</option>
-  <option value="estado_tramite">Solicitud de estado de trámite</option>
-  <option value="orientacion_ruta">Orientación sobre ruta institucional</option>
-  <option value="querella_policiva">Orientación para posible querella policiva</option>
-</select>
+          <label for="tipoPeticion">Tipo de solicitud o ruta</label>
+          <select id="tipoPeticion" name="tipoPeticion" required>
+            <option value="">Seleccione</option>
+            <option value="derecho_peticion">Derecho de petición general</option>
+            <option value="informacion_publica">Solicitud de información pública</option>
+            <option value="copias">Solicitud de copias</option>
+            <option value="estado_tramite">Solicitud de estado de trámite</option>
+            <option value="orientacion_ruta">Orientación sobre ruta institucional</option>
+            <option value="querella_policiva">Orientación para posible querella policiva</option>
+          </select>
 
-<div id="ayudaTipoPeticion" class="aviso">
-  Seleccione un tipo de solicitud para ver una orientación inicial.
-</div>
+          <div id="ayudaTipoPeticion" class="aviso">
+            Seleccione un tipo de solicitud para ver una orientación inicial.
+          </div>
 
-        <label for="asunto">Asunto</label>
-        <input id="asunto" name="asunto" type="text" placeholder="Ejemplo: Solicitud de información pública" required />
-<section class="aviso">
-  <h3>Recomendación</h3>
-  <p>
-    Escriba los hechos de forma clara, respetuosa y verificable.
-    No incluya acusaciones sin soporte ni datos sensibles innecesarios.
-  </p>
-</section>
-        <label for="hechos">Hechos o contexto</label>
-        <textarea id="hechos" name="hechos" rows="6" placeholder="Describa el contexto de forma clara y respetuosa" required></textarea>
+          <label for="asunto">Asunto</label>
+          <input id="asunto" name="asunto" type="text" placeholder="Ejemplo: Solicitud de información pública" required />
 
-        <label for="solicitud">Solicitud concreta</label>
-        <textarea id="solicitud" name="solicitud" rows="6" placeholder="Indique qué información, copia o respuesta solicita" required></textarea>
+          <section class="aviso">
+            <h3>Recomendación</h3>
+            <p>
+              Escriba los hechos de forma clara, respetuosa y verificable.
+              No incluya acusaciones sin soporte ni datos sensibles innecesarios.
+            </p>
+          </section>
 
-        <label for="anexos">Anexos</label>
-        <textarea id="anexos" name="anexos" rows="3" placeholder="Indique si existen anexos. En clase no use documentos reales."></textarea>
+          <label for="hechos">Hechos o contexto</label>
+          <textarea id="hechos" name="hechos" rows="6" placeholder="Describa el contexto de forma clara y respetuosa" required></textarea>
 
-        <label class="checkbox">
-          <input type="checkbox" id="aceptaRevision" required />
-          Entiendo que este sistema genera un borrador que debe ser revisado antes de radicarse.
-        </label>
+          <label for="solicitud">Solicitud concreta</label>
+          <textarea id="solicitud" name="solicitud" rows="6" placeholder="Indique qué información, copia o respuesta solicita" required></textarea>
 
-        <button type="button" id="btnVistaPrevia">Generar vista previa local</button>
-        <button type="button" id="btnCopiar">Copiar borrador</button>
-        <button type="submit">Enviar al backend</button>
-      </form>
-    </section>
+          <label for="anexos">Anexos</label>
+          <textarea id="anexos" name="anexos" rows="3" placeholder="Indique si existen anexos. En clase no use documentos reales."></textarea>
 
-    <section>
-      <h2>Vista previa del borrador</h2>
-      <pre id="vistaPrevia">Complete el formulario y haga clic en “Generar vista previa local”.</pre>
-    </section>
+          <label class="checkbox">
+            <input type="checkbox" id="aceptaRevision" required />
+            Entiendo que este sistema genera un borrador que debe ser revisado antes de radicarse.
+          </label>
 
-    <section>
-      <h2>Resultado del backend</h2>
-      <div id="resultadoBackend">Aún no se ha enviado al backend.</div>
-    </section>
+          <button type="button" id="btnVistaPrevia">Generar vista previa local</button>
+          <button type="button" id="btnCopiar">Copiar borrador</button>
+          <button type="submit">Enviar al backend</button>
+        </form>
+      </section>
+
+      <section class="panel">
+        <h2>Vista previa del borrador</h2>
+        <pre id="vistaPrevia">Complete el formulario y haga clic en “Generar vista previa local”.</pre>
+
+        <h2>Resultado del backend</h2>
+        <div id="resultadoBackend">Aún no se ha enviado al backend.</div>
+      </section>
+    </div>
   </main>
 
   <script src="/js/peticion.js"></script>

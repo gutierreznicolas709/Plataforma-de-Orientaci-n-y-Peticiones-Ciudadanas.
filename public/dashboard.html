@@ -8,45 +8,57 @@
 </head>
 <body>
   <main>
-    <h1>Dashboard de Seguimiento</h1>
+    <header class="page-header">
+      <div>
+        <span class="badge">Panel de seguimiento</span>
+        <h1>Dashboard de Seguimiento</h1>
+        <p>Visualiza tus solicitudes, revisa documentos y mantén el control del flujo de cada trámite.</p>
+      </div>
+      <a class="header-link" href="/peticion.html">+ Nueva petición</a>
+    </header>
 
-    <p class="aviso">
-      Este dashboard muestra solicitudes de práctica. No use datos reales.
-    </p>
+    <div class="dashboard-grid">
+      <article class="stat-card">
+        <span>Usuario actual</span>
+        <strong id="usuarioActual">Verificando sesión...</strong>
+      </article>
+      <article class="stat-card">
+        <span>Solicitudes registradas</span>
+        <strong id="resumenDashboard">Cargando solicitudes...</strong>
+      </article>
+    </div>
 
-    <section>
-      <h2>Usuario de práctica</h2>
-      <div id="usuarioActual">Verificando sesión...</div>
+    <section class="panel">
+      <div class="section-title">
+        <h2>Solicitudes registradas</h2>
+      </div>
+
+      <div class="table-wrap">
+        <table id="tablaPeticiones" border="1">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Fecha</th>
+              <th>Entidad</th>
+              <th>Asunto</th>
+              <th>Tipo</th>
+              <th>Estado</th>
+              <th>Documento</th>
+              <th>Observaciones</th>
+              <th>Actualizar</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td colspan="9">Cargando...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </section>
 
-    <section>
-      <h2>Solicitudes registradas</h2>
-      <div id="resumenDashboard">Cargando solicitudes...</div>
-
-      <table id="tablaPeticiones" border="1">
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Fecha</th>
-            <th>Entidad</th>
-            <th>Asunto</th>
-            <th>Tipo</th>
-            <th>Estado</th>
-            <th>Documento</th>
-            <th>Observaciones</th>
-            <th>Actualizar</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td colspan="9">Cargando...</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-
-    <section>
-      <h2>Acciones</h2>
+    <section class="panel actions-panel">
+      <h2>Acciones rápidas</h2>
       <p>
         <a href="/peticion.html">Crear nueva petición</a>
       </p>
